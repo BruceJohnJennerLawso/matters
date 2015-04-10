@@ -10,12 +10,14 @@
 //#include "Source.cpp"
 #include <iostream>
 #include <string>
+#include <vector>
 
 
 #ifndef MaTtErS
 #define MaTtErS
 
-typedef int atomic_number;
+typedef unsigned int atomic_number;
+typedef float atomic_mass;
 
 enum element{H, 													  	 																 He,
 			 Li, Be, 								   																 B,  C,  N,  O,  F,  Ne,
@@ -28,19 +30,36 @@ enum element{H, 													  	 																 He,
 
 // ^ yes, I really am that badass
 
-std::string element_name(element input);
-
-atomic_number Atomic_number_of(element input);
+std::string Element_name(element input);
 // ie, H -> "Hydrogen"
+atomic_mass Element_mass(element input);
+// ie, H -> 1.01
+atomic_number Atomic_number_of(element input);
+// ie, H -> 1
 
-class Element
+class Atom
 {	public:
-	Element(element type);
-	Element(atomic_number number);
+	Atom();
+	// I guess just assumed to be Hydrogen
+	// or maybe set the mass to zero in order to flag an issue
+	Atom(element type);
+	Atom(atomic_number number);
 	
 	atomic_number Atomic_number;
 	
-	~Element();
+	~Atom();
 };
+
+class Molecule
+{	public:
+	Molecule();
+	// Uhhh, damn
+	Molecule(std::vector<element> atoms);
+	// that looks good for now
+	std::vector<Atom> Atoms;
+	
+	~Molecule();
+	
+}
 
 #endif

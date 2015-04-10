@@ -12,14 +12,29 @@
 
 
 
-Element::Element(element type)
+Atom::Atom(element type)
 {	Atomic_number = Atomic_number_of(type);
 }
 
-Element::Element(atomic_number number)
+Atom::Atom(atomic_number number)
 {	Atomic_number = number;
 }
 
-Element::~Element()
+Atom::~Atom()
 {
+}
+
+
+// Molecules ///////////////////////////////////////////////////////////////////
+
+Molecule::Molecule()
+{
+}
+
+Molecule::Molecule(std::vector<element> atoms)
+{	// iterate the list and construct atoms in the Atoms vector
+}
+
+Molecule::~Molecule()
+{	// I guess we flush the Atoms vector here
 }
