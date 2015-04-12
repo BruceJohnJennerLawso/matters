@@ -10,7 +10,10 @@
 //#include "Source.cpp"
 #include "matters.hpp"
 
-
+Atom::Atom()
+{	Atomic_number = 0;
+	// hahaha
+}
 
 Atom::Atom(element type)
 {	Atomic_number = Atomic_number_of(type);

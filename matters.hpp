@@ -46,6 +46,10 @@ class Atom
 	Atom(atomic_number number);
 	
 	atomic_number Atomic_number;
+	atomic_mass Mass_number;
+	
+	
+	
 	
 	~Atom();
 };
